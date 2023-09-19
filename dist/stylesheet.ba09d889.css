@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Bookk Myungjo1';
+    src: url('/BookkMyungjo-Bd.0ddaa6fd.eot');
+    src: url('/BookkMyungjo-Bd.0ddaa6fd.eot?#iefix') format('embedded-opentype'),
+        url('/BookkMyungjo-Bd.7b8e0594.woff2') format('woff2'),
+        url('/BookkMyungjo-Bd.fdef5439.woff') format('woff'),
+        url('/BookkMyungjo-Bd.1cf67a55.ttf') format('truetype'),
+        url('/BookkMyungjo-Bd.31a4f449.svg#BookkMyungjo-Bd') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bookk Myungjo';
+    src: url('/BookkMyungjo-Lt.aa346202.eot');
+    src: url('/BookkMyungjo-Lt.aa346202.eot?#iefix') format('embedded-opentype'),
+        url('/BookkMyungjo-Lt.b4e3b699.woff2') format('woff2'),
+        url('/BookkMyungjo-Lt.fcbedf9c.woff') format('woff'),
+        url('/BookkMyungjo-Lt.9c0aa1b8.ttf') format('truetype'),
+        url('/BookkMyungjo-Lt.bb897bfb.svg#BookkMyungjo-Lt') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*# sourceMappingURL=/stylesheet.ba09d889.css.map */

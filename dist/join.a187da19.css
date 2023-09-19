@@ -1,0 +1,339 @@
+*{margin: 0; padding: 0;} 
+li{list-style: none;}
+a{text-decoration: none; color: black;}
+
+
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+/* @font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+ */
+
+/* div{color: #FCF9EE;} */
+h1{
+    font-family: 'BookkMyungjo-Bd';
+    color: #222;
+}
+h5{
+    font-size: 14px;
+    color: #222;
+
+}
+body{
+    background-color: #FCF9EE;
+}
+
+p{
+    font-size: 12px;
+}
+
+#message{color: red;}
+#message.success{color: blue;}
+
+#message2{color: red;}
+#message2.success{color: blue;}
+
+
+
+/*************** header ***************/
+.rolling {overflow: hidden;
+    display: flex; 
+    /* width: 1300px; */
+    width: 100wh;
+    margin: 0 auto;
+    background: #222;
+    height: 40px;
+    line-height: 40px;
+}
+.rolling .list {display: flex;}
+.rolling .list > li {
+    font-size: 14px;
+    color:#FCF9EE;
+    width: 1800px;
+}
+.rolling .list > li a{
+    color: #FCF9EE;
+}
+@keyframes flowRolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 1280px) {
+    .flow_banner .list > li {font-size: 16px;padding: 10px;}
+}
+
+@media (max-width: 767px) {
+    .flow_banner .list > li {font-size: 14px;padding: 5px;}
+}
+/*************** wrap ***************/
+.wrap{
+    position: relative;
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 160px;
+    overflow: hidden;
+    padding: 0 240px;
+    box-sizing: border-box;
+}
+.wrap .wrap_tit h1{
+    text-align: center;
+}
+.wrap .wrap_tit p{
+    position: absolute;
+    font-size: 16px;
+    top: 60px;
+    right: 250px;
+}
+.wrap .wrap_tit p span{
+    color: red;
+}
+.wrap .wrap_tit hr{
+    margin: 30px 0 20px 0;
+}
+
+/************************ container *********************/
+.wrap .container{
+    margin-left: 90px;
+    overflow: hidden;
+}
+.wrap .container ul:nth-child(1){
+    float: left;
+}
+.wrap .container ul li{
+    margin-bottom: 20px;
+}
+
+.wrap .container ul:nth-child(1) li {
+    margin-bottom: 45px;
+}
+.wrap .container ul:nth-child(1) li label{
+    font-size: 14px;
+}
+.wrap .container ul:nth-child(1) li:nth-child(1){
+    margin-top: 15px;
+}
+.wrap .container ul li label{
+    margin-right: 70px;
+}
+.wrap .container ul li label span{
+    color: red;
+}
+.wrap .container ul:nth-child(2) {
+    float: left;
+}
+.wrap .container ul:nth-child(2) li input{
+    height: 46px;
+    width: 320px;
+    padding: 0 20px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    /* background-color:transparent; */
+    box-sizing: border-box;
+}
+.wrap .container ul:nth-child(2) li:nth-child(1) button{
+    border: none;
+    margin-left: 15px;
+    height: 43px;
+    width: 100px;
+    box-sizing: border-box;
+    background-color:transparent;
+    background-color: #222;
+    color: #FCF9EE;
+    border-radius: 3px;
+}
+.wrap .container ul:nth-child(2) li:nth-child(1) button:hover{
+    background-color: #fff;
+    color: #222;
+    cursor: pointer;
+}
+.wrap .container ul:nth-child(2) li:nth-child(5) input{
+    width: 180px;
+}
+.wrap .container ul:nth-child(2) li:nth-child(5) select{
+    height: 45px;
+    width: 112px;
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+.wrap .container ul:nth-child(2) li:nth-child(6) select{
+    padding: 0 15px;
+    height: 45px;
+    width: 80px;
+    border-radius: 3px; 
+}
+.wrap .container ul:nth-child(2) li:nth-child(6) input{
+    margin: 0;
+    width: 102px;
+}
+.wrap .container ul:nth-child(2) li:nth-child(6) button{
+    border: none;
+    margin-left: 15px;
+    height: 43px;
+    width: 100px;
+    box-sizing: border-box;
+    background-color:transparent;
+    background-color: #222;
+    color: #FCF9EE;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.wrap .container ul:nth-child(2) li:nth-child(6) button:hover{
+    background-color: #fff;
+    color: #222;
+}
+.wrap .container ul:nth-child(2) li:nth-child(7) button{
+    border: none;
+    height: 46px;
+    width: 320px;
+    box-sizing: border-box;
+    background-color:transparent;
+    background-color: #222;
+    color: #FCF9EE;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.wrap .container ul:nth-child(2) li:nth-child(7) button:hover{
+    background-color: #fff;
+}
+.wrap .container ul:nth-child(2) li:nth-child(7) button:hover h5{
+    color: #222;
+}
+.wrap .container ul:nth-child(2) li:nth-child(7) button h5{
+    color: #FCF9EE;
+}
+
+.wrap .container ul:nth-child(2) li:nth-child(8) input{
+    margin-top: 18px;
+    width: 20px;
+    height: 15px;
+    margin-right: 3px;
+}
+.wrap .container ul:nth-child(2) li:nth-child(8) span{
+    font-size: 17px;
+    margin-right: 40px;
+    
+}
+.wrap .container ul:nth-child(2) li:nth-child(9) input{
+    margin-top: 14px;
+    width: 128px;
+}
+#birth_day{
+    width: 90px;
+}
+.wrap .container ul:nth-child(2) li:nth-child(9) select{
+    padding: 0 15px;
+    width: 90px;
+    height: 45px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+#user_birth2{
+    width: 90px;
+}
+
+/********************* message *****************/
+#message{position: absolute;}
+#message2{position: absolute;}
+
+
+/********************* content *****************/
+.contents{
+    height: 600px;
+}
+.contents hr{
+    margin-bottom: 50px;
+}
+.contents>h5{
+    margin-left: 90px;
+    width: 170px;
+    float: left;
+}
+.contents h5 span{
+    color: red;
+}
+.contents ul{
+    float: left;
+}
+.contents ul li{
+    margin-bottom: 25px;
+}
+.contents ul li>span>span{
+    color: #999;
+}
+.contents ul li:nth-child(1){
+    font-weight: bold;
+}
+
+.contents ul li button{
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color:transparent;
+    margin-left: 60px;
+}
+.contents ul>button{
+    width: 320px;
+    height: 46px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border: none;
+    background-color:transparent;
+    background-color: #222;
+    color: #FCF9EE;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.contents ul li:nth-child(2) button{
+    margin-left: 135px;
+}
+.contents ul li:nth-child(3) button{
+    margin-left: 67px;
+}
+.contents ul li button:hover{
+    color: #888;
+}
+.contents ul>button h5{
+    color: #FCF9EE;
+}
+.contents ul>button:hover{
+    background-color: #fff;
+    color: #222;
+}
+.contents ul>button:hover h5{
+    color: #222;
+}
+.terms01_page,
+.terms02_page,
+.terms03_page
+ {
+    display: none;
+    overflow: scroll;
+    top: 0;
+    right: -320px;
+    width: 380px;
+    height: 200px;
+    background-color: #fff;
+    color: #888;
+    font-size: 12px;
+
+}
+
+
+
+
+/*# sourceMappingURL=/join.a187da19.css.map */

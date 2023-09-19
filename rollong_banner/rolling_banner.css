@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/************ color **************/
+p,
+span,
+ul,
+li,
+div,
+a {
+  font-family: "Bookk Myungjo";
+  /*  font-family: 'KOTRA_GOTHIC'; */
+}
+
+.rolling_banner {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  /*     margin: 0 auto; */
+  background: #000;
+}
+.rolling_banner .rolling {
+  display: flex;
+  /*   box-sizing: border-box; */
+  /*  padding: 0 5px; */
+  height: 40px;
+}
+.rolling_banner .rolling > li {
+  font-size: 14px;
+  width: 1300px;
+  color: #fff;
+  line-height: 40px;
+  font-family: "KOTRA_GOTHIC ";
+}
+
+@keyframes flowRolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}/*# sourceMappingURL=rolling_banner.css.map */

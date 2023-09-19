@@ -1,0 +1,1300 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/************ color **************/
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+p,
+span,
+ul,
+li,
+div,
+button,
+a {
+  letter-spacing: 1px;
+  font-family: "Bookk Myungjo";
+}
+
+body {
+  background-color: #fcf9ee;
+}
+
+.rolling_banner {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  background: #000;
+}
+.rolling_banner .rolling {
+  display: flex;
+  height: 40px;
+  background-color: #000;
+  z-index: 9999;
+}
+.rolling_banner .rolling > li {
+  font-size: 14px;
+  width: 1300px;
+  color: #fff;
+  line-height: 40px;
+  font-family: "KOTRA_GOTHIC ";
+}
+
+@keyframes flowRolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.header {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+  transition: 0.3s;
+  border-bottom: 1px solid #222;
+  /*************** gnb  *****************/
+}
+.header:hover {
+  /*    height: 150px; */
+  background-color: #fcf9ee;
+}
+.header:hover .header_inner .logo > a {
+  color: #222;
+}
+.header:hover .header_inner .lnb .menu > a {
+  color: #222;
+  font-weight: bold;
+}
+.header:hover .header_inner .gnb {
+  filter: invert(100%);
+  /* 블랙만들기 */
+}
+.header:hover .lnb .menu a {
+  color: #222;
+}
+.header .header_inner {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  /************ lnb_menu ********/
+}
+.header .header_inner .logo {
+  color: #222;
+  padding: 10px 0;
+  margin-left: 45px;
+  width: 185px;
+  text-align: center;
+  /*  &:hover{color: #222;} */
+  cursor: pointer;
+}
+.header .header_inner .logo > a {
+  color: #222;
+}
+.header .header_inner .logo > a p {
+  font-size: 32px;
+  font-weight: bold;
+  /*  letter-spacing: 3px; */
+}
+.header .header_inner .logo > a span {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 8px;
+}
+.header .header_inner .lnb {
+  width: 800px;
+  position: relative;
+}
+.header .header_inner .lnb > div {
+  font-weight: bold;
+}
+.header .header_inner .lnb .menu {
+  position: absolute;
+  margin-left: 45px;
+  margin-top: 40px;
+  float: left;
+}
+.header .header_inner .lnb .menu:hover a {
+  color: #666;
+}
+.header .header_inner .lnb .menu:hover ul {
+  display: block;
+}
+.header .header_inner .lnb .menu > a {
+  font-size: 20px;
+}
+.header .header_inner .lnb .menu ul {
+  overflow: hidden;
+  display: none;
+  margin-top: 30px;
+}
+.header .header_inner .lnb .menu ul li {
+  float: left;
+  margin-right: 50px;
+}
+.header .header_inner .lnb .menu ul li a {
+  font-size: 14px;
+  font-family: "KOTRA_GOTHIC";
+}
+.header .header_inner .lnb .menu ul li a:hover {
+  color: #222;
+}
+.header .header_inner .lnb .new {
+  left: 0px;
+}
+.header .header_inner .lnb .sent {
+  left: 120px;
+}
+.header .header_inner .lnb .shop {
+  left: 240px;
+}
+.header .header_inner .lnb .about {
+  left: 360px;
+}
+.header .gnb {
+  position: absolute;
+  right: 20px;
+  margin-top: 40px;
+  width: 140px;
+  filter: invert(100%);
+}
+.header .gnb li {
+  float: left;
+  margin-right: 25px;
+  /*   cursor: pointer; */
+  cursor: pointer;
+  transition: 0.3s;
+}
+.header .gnb li:hover {
+  scale: 1.08;
+}
+.header .gnb li:nth-child(3) {
+  margin-right: 0;
+}
+.header .gnb li img {
+  width: 25px;
+  height: 25px;
+}
+
+/* search */
+.search_ex {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 300px;
+  background-color: #fcf9ee;
+}
+.search_ex .search_inner {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+.search_ex .search_inner button {
+  position: absolute;
+  font-family: "KOTRA_GOTHIC";
+  top: 30px;
+  right: 30px;
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+.search_ex .search_inner .logo {
+  width: 185px;
+  margin-top: 10px;
+  margin-left: 45px;
+  text-align: center;
+  color: #222;
+  cursor: pointer;
+}
+.search_ex .search_inner .logo p {
+  font-size: 30px;
+  font-weight: bold;
+  /* letter-spacing: 3px; */
+}
+.search_ex .search_inner .logo span {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 8px;
+}
+.search_ex .search_inner input {
+  font-family: "KOTRA_GOTHIC";
+  font-size: 20px;
+  width: 990px;
+  border: none;
+  margin-top: 60px;
+  border-bottom: solid #222 1px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  background: none;
+}
+.search_ex .search_inner input::placeholder {
+  margin-left: 50px;
+  color: #999;
+}
+.search_ex .search_inner input:focus {
+  outline: none;
+}
+.search_ex .search_inner img {
+  position: absolute;
+  top: 125px;
+  right: 170px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.search_ex .search_inner img:hover {
+  scale: 1.05;
+}
+.search_ex .search_inner label {
+  position: absolute;
+  color: #aaa;
+  left: 270px;
+}
+.search_ex .search_inner .search_txt {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+.search_ex .search_inner .search_txt p {
+  font-family: "KOTRA_GOTHIC";
+  height: 40px;
+  background-color: #fff;
+  line-height: 40px;
+  padding: 0 15px;
+  border: 1px solid #222;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.search_ex .search_inner .search_txt p:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+/* 여기까지 header */
+.wrap {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.wrap > h5 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+.wrap .content {
+  display: flex;
+  overflow: hidden;
+  width: 1300px;
+  height: 620px;
+  padding: 0 0 10px 10px;
+  box-sizing: border-box;
+  padding-top: 0;
+  background-color: #fff;
+}
+.wrap .content .content_left {
+  width: 750px;
+  height: 620px;
+  padding-right: 10px;
+}
+.wrap .content .content_left .newSwiper1 {
+  width: 750px;
+  height: 450px;
+  text-align: center;
+}
+.wrap .content .content_left .newSwiper1 > .swiper-wrapper > .swiper-slide {
+  width: 450px;
+  height: 450px;
+}
+.wrap .content .content_left .newSwiper1 > .swiper-wrapper > .swiper-slide > img {
+  width: 60%;
+  transform: translateX(-20px);
+  filter: drop-shadow(2px 2px 2px #aaa);
+}
+.wrap .content .content_left .newSwiper2 > .swiper-wrapper .swiper-slide {
+  margin-top: 30px;
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+.wrap .content .content_left .newSwiper2 > .swiper-wrapper .swiper-slide > img {
+  width: 85%;
+  opacity: 0.6;
+}
+.wrap .content .content_left .newSwiper2 > .swiper-wrapper .swiper-slide-thumb-active {
+  background-color: #fff;
+}
+.wrap .content .content_left .newSwiper2 > .swiper-wrapper .swiper-slide-thumb-active > img {
+  opacity: 1;
+  filter: drop-shadow(2px 2px 2px #aaa);
+}
+.wrap .content .content_right {
+  /* padding-right: 45px; box-sizing: border-box; */
+  border-left: 1px solid #ddd;
+  width: 528px;
+  height: 620px;
+  text-align: center;
+}
+.wrap .content .content_right > h5 {
+  font-size: 16px;
+  margin-top: 100px;
+  margin-bottom: 35px;
+}
+.wrap .content .content_right > h5:nth-child(2) {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.wrap .content .content_right > p {
+  font-family: "KOTRA_GOTHIC";
+  margin-bottom: 35px;
+  font-size: 14px;
+}
+.wrap .content .content_right > p:nth-child(4) {
+  margin-bottom: 10px;
+}
+.wrap .content .content_right .selectBox2 {
+  position: relative;
+  width: 485px;
+  height: 50px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 4px;
+  border: 2px solid #222;
+  cursor: pointer;
+}
+.wrap .content .content_right .selectBox2 .label {
+  height: 50px;
+  padding-right: 300px;
+  border: 0 none;
+  outline: 0 none;
+  padding-left: 15px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+.wrap .content .content_right .selectBox2 .label:hover {
+  color: #999;
+}
+.wrap .content .content_right .selectBox2 .label > img {
+  position: absolute;
+  z-index: 999;
+  right: -30px;
+  top: -15px;
+  scale: 0.15;
+}
+.wrap .content .content_right .selectBox2 .label > img:hover {
+  filter: invert(50%);
+}
+.wrap .content .content_right .selectBox2 .optionList {
+  display: none;
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 490px;
+  background: #fff;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.wrap .content .content_right .selectBox2 .optionList .optionItem {
+  text-align: center;
+  border-bottom: 1px solid #222;
+  padding: 12px 0;
+}
+.wrap .content .content_right .selectBox2 .optionList .optionItem > span {
+  margin-left: 80px;
+}
+.wrap .content .content_right .selectBox2 .optionList .optionItem:nth-child(3) {
+  border: none;
+}
+.wrap .content .content_right .selectBox2 .optionList .optionItem:hover {
+  background: #ddd;
+}
+.wrap .content .content_right > button {
+  margin-top: 20px;
+  width: calc((100% - 45px) / 2);
+  height: 50px;
+  background: transparent;
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.wrap .content .content_right > button:hover {
+  color: #555;
+  border: 1px solid #999;
+}
+.wrap .content .content_right .buy {
+  background-color: #222;
+  color: #fff;
+}
+.wrap .content .content_right .buy:hover {
+  background-color: #555;
+  color: #fff;
+}
+.wrap .container {
+  width: 1080px;
+  margin: 0 auto;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  /* page03 */
+}
+.wrap .container .page {
+  position: relative;
+  border-bottom: 1px solid #222;
+  margin-bottom: 40px;
+}
+.wrap .container .page > p {
+  font-size: 16px;
+  font-family: "KOTRA_GOTHIC";
+  margin: 40px 0 40px 35px;
+}
+.wrap .container .page .page_btn {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  font-size: 35px;
+  padding: 20px 30px 20px 50px;
+}
+.wrap .container .page .note,
+.wrap .container .page .ingredient {
+  display: none;
+  overflow: hidden;
+  font-family: "KOTRA_GOTHIC";
+}
+.wrap .container .page .note > ul,
+.wrap .container .page .ingredient > ul {
+  float: left;
+  width: 340px;
+  height: 405px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.wrap .container .page .note > ul > li:nth-child(1),
+.wrap .container .page .ingredient > ul > li:nth-child(1) {
+  width: 340px;
+  height: 260px;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+.wrap .container .page .note > ul > li:nth-child(1) > img,
+.wrap .container .page .ingredient > ul > li:nth-child(1) > img {
+  width: 60%;
+}
+.wrap .container .page .note > ul > li:nth-child(2),
+.wrap .container .page .ingredient > ul > li:nth-child(2) {
+  background-color: #fff;
+  margin-bottom: 5px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  font-family: "KOTRA_GOTHIC";
+}
+.wrap .container .page .note > ul > li:nth-child(3),
+.wrap .container .page .ingredient > ul > li:nth-child(3) {
+  background-color: #fff;
+  height: 95px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: "KOTRA_GOTHIC";
+}
+.wrap .container .page .note > ul:nth-child(2),
+.wrap .container .page .ingredient > ul:nth-child(2) {
+  margin: 0 30px;
+}
+.wrap .container .page .note > ul:nth-child(2) > li:nth-child(3),
+.wrap .container .page .ingredient > ul:nth-child(2) > li:nth-child(3) {
+  padding: 30px 0;
+}
+.wrap .container .page .note > ul:nth-child(3) > li:nth-child(3),
+.wrap .container .page .ingredient > ul:nth-child(3) > li:nth-child(3) {
+  padding: 20px 0;
+}
+.wrap .container .page .ingredient {
+  margin-bottom: 40px;
+}
+.wrap .container .page03 {
+  /*  position: relative; */
+}
+.wrap .container .page03 .review_ex {
+  display: none;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.wrap .container .page03 .review_ex > div {
+  margin-right: 10px;
+  float: left;
+  margin-bottom: 30px;
+}
+.wrap .container .page03 .review_ex > div > .scope {
+  width: 90px;
+  height: 80px;
+  text-align: center;
+  background-color: #fff;
+  padding-top: 20px;
+  box-sizing: border-box;
+  line-height: 20px;
+  border-radius: 3px;
+}
+.wrap .container .page03 .review_ex > div > .scope > p {
+  font-family: "KOTRA_GOTHIC";
+  font-size: 12px;
+}
+.wrap .container .page03 .review_ex > div > button {
+  margin-top: 10px;
+  font-family: "KOTRA_GOTHIC";
+  background-color: #fff;
+  width: 90px;
+  height: 60px;
+  border-radius: 3px;
+}
+.wrap .container .page03 .review_ex > div > button:hover {
+  background-color: #222;
+  color: #fff;
+}
+.wrap .container .page03 .review_ex .review_slider {
+  width: 970px;
+  height: 150px;
+}
+.wrap .container .page03 .review_ex .review_slider .swiper-wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+.wrap .container .page03 .review_ex .review_slider .swiper-wrapper .swiper-slide {
+  width: 168px;
+  height: 150px;
+}
+.wrap .container .page03 .review_ex .review_slider .swiper-wrapper .swiper-slide:nth-child(2) {
+  transform: translateY(-65px);
+}
+.wrap .container .page03 .review_ex .review_slider .swiper-wrapper .swiper-slide:nth-child(4) {
+  transform: translateY(-40px);
+}
+.wrap .container .page03 .review_ex .review_slider .swiper-wrapper .swiper-slide:nth-child(5) {
+  transform: translateY(-20px);
+}
+.wrap .container .page03 .review_ex .review_slider .swiper-wrapper .swiper-slide > img {
+  width: 100%;
+  transform: translateY(-10px);
+}
+.wrap .container .page03 .review_ex .review_slider .next_button:hover .next_back {
+  background-color: #999;
+}
+.wrap .container .page03 .review_ex .review_slider .next_button:hover .swiper-button-next {
+  color: #fff;
+}
+.wrap .container .page03 .review_ex .review_slider .next_button .next_back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 150px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+.wrap .container .page03 .review_ex .review_slider .next_button .swiper-button-next {
+  scale: 0.6;
+  margin-right: -8px;
+  color: #222;
+}
+.wrap .container .page03 .review_ex .review_slider .prev_button:hover .prev_back {
+  background-color: #999;
+}
+.wrap .container .page03 .review_ex .review_slider .prev_button:hover .swiper-button-prev {
+  color: #fff;
+}
+.wrap .container .page03 .review_ex .review_slider .prev_button .prev_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 150px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+.wrap .container .page03 .review_ex .review_slider .prev_button .swiper-button-prev {
+  scale: 0.6;
+  margin-left: -8px;
+  color: #222;
+}
+.wrap .container .page03 .review_ex .review_write {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 500px;
+  height: 350px;
+  border-radius: 3px;
+  background-color: #fff;
+  text-align: center;
+  z-index: 999;
+  box-shadow: 2px 2px 2px 2px #999;
+}
+.wrap .container .page03 .review_ex .review_write > h1 {
+  margin: 20px 0;
+}
+.wrap .container .page03 .review_ex .review_write .reviewform .review_name > input {
+  width: 300px;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: #eee;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.wrap .container .page03 .review_ex .review_write .reviewform .review_tit > input {
+  width: 300px;
+  height: 20px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: #eee;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.wrap .container .page03 .review_ex .review_write .reviewform .review_contents > textarea {
+  width: 300px;
+  height: 150px;
+  border: none;
+  background-color: #eee;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.wrap .container .page03 .review_ex .review_write .reviewform .cmd {
+  margin-top: 10px;
+}
+.wrap .container .page03 .review_ex .review_write .reviewform .cmd > input {
+  width: 100px;
+  height: 25px;
+  border: none;
+  background-color: #222;
+  border-radius: 3px;
+  color: #fff;
+  line-height: 25px;
+  cursor: pointer;
+}
+.wrap .container .page04 {
+  border: none;
+  overflow: hidden;
+}
+.wrap .container .page04 .recommend .recommend_box {
+  float: left;
+  width: 255px;
+  height: 417px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.wrap .container .page04 .recommend .recommend_box:hover > div > img {
+  scale: 1.05;
+  /*  filter: drop-shadow(5px 2px 2px #999); */
+}
+.wrap .container .page04 .recommend .recommend_box > div {
+  width: 210px;
+  height: 255px;
+  margin-bottom: 10px;
+}
+.wrap .container .page04 .recommend .recommend_box > div > img {
+  width: 100%;
+}
+.wrap .container .page04 .recommend .recommend_box > h5 {
+  margin-bottom: 10px;
+}
+.wrap .container .page04 .recommend .recommend_box > h5 > span {
+  margin-left: 40px;
+}
+.wrap .container .page04 .recommend .recommend_box > p {
+  font-family: "KOTRA_GOTHIC";
+  margin-bottom: 30px;
+}
+.wrap .container .page04 .recommend .recommend_box:nth-child(4) {
+  margin-right: 0;
+}
+.wrap .container .page04 .recommend .recommend_box:nth-child(4) > div > img {
+  transform: translateY(20px);
+}
+
+/********************** cart_pop ********************/
+.cart_pop {
+  position: fixed;
+  top: 40px;
+  right: -700px;
+  width: 530px;
+  height: 868px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 2px #999;
+  z-index: 999;
+}
+.cart_pop .cart_pop_inner {
+  width: 500px;
+  height: 835px;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color: initial;
+  border: 1px solid #222;
+  text-align: center;
+}
+.cart_pop .cart_pop_inner > p {
+  margin-top: 250px;
+  font-family: "KOTRA_GOTHIC";
+}
+.cart_pop .cart_pop_inner > div {
+  display: flex;
+  justify-content: center;
+}
+.cart_pop .cart_pop_inner > div:nth-child(2) {
+  margin-top: 70px;
+}
+.cart_pop .cart_pop_inner > div:nth-child(2) > div:nth-child(1) {
+  width: 110px;
+  height: 180px;
+  overflow: hidden;
+}
+.cart_pop .cart_pop_inner > div:nth-child(2) > div:nth-child(1) > img {
+  width: 180%;
+  transform: translate(-23%, -7%);
+}
+.cart_pop .cart_pop_inner > div:nth-child(2) > div:nth-child(2) {
+  margin-left: 20px;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+.cart_pop .cart_pop_inner > div:nth-child(2) > div:nth-child(2) > p {
+  margin-top: 5px;
+  font-size: 14px;
+  font-family: "KOTRA_GOTHIC";
+}
+.cart_pop .cart_pop_inner > div:nth-child(2) > div:nth-child(2) > h5:nth-child(3) {
+  margin-top: 20px;
+}
+.cart_pop .cart_pop_inner > div:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 305px;
+  line-height: 30px;
+}
+.cart_pop .cart_pop_inner > div:nth-child(3) .quantity_control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #222;
+  border-radius: 3px;
+}
+.cart_pop .cart_pop_inner > div:nth-child(3) .quantity_control > button {
+  width: 30px;
+  height: 30px;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+.cart_pop .cart_pop_inner > div:nth-child(3) .quantity_control > button:hover {
+  color: #999;
+}
+.cart_pop .cart_pop_inner > div:nth-child(3) .quantity_control > input {
+  width: 50px;
+  height: 30px;
+  border: none;
+  text-align: center;
+}
+.cart_pop .cart_pop_inner > button {
+  font-family: "KOTRA_GOTHIC";
+  width: 330px;
+  height: 45px;
+  border-radius: 3px;
+}
+.cart_pop .cart_pop_inner > button:nth-child(4) {
+  margin-top: 60px;
+  border: 1px solid #222;
+}
+.cart_pop .cart_pop_inner > button:nth-child(5) {
+  margin-top: 10px;
+  background-color: #222;
+  color: #fff;
+}
+.cart_pop .cart_pop_inner > button:nth-child(6) {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  right: 30px;
+  font-size: 25px;
+}
+.cart_pop .cart_pop_inner > button:nth-child(6):hover {
+  color: #999;
+}
+
+/********************** instar_swiper ********************/
+.insta_tit {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.contents05 {
+  width: 1300px;
+  height: 280px;
+  background-color: #fcf9ee;
+}
+.contents05 .instar {
+  width: 100%;
+  height: 100%;
+}
+.contents05 .instar .swiper-wrapper {
+  position: relative;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide {
+  width: 280px;
+  height: 280px;
+  text-align: center;
+  font-size: 18px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  cursor: pointer;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide:hover > img {
+  transform: translateY(-5px);
+}
+.contents05 .instar .swiper-wrapper .swiper-slide:hover .insta_txt {
+  bottom: 0;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .shopping_icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .shopping_icon:hover {
+  background-color: #fff;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .shopping_icon:hover img {
+  filter: invert(100%);
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .shopping_icon img {
+  width: 100%;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .insta_txt {
+  position: absolute;
+  width: 250px;
+  height: 70px;
+  bottom: -70px;
+  transition: 0.3s;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .insta_txt .insta_txt_bg {
+  position: absolute;
+  top: 0;
+  background-color: #222;
+  opacity: 0.5;
+  width: 250px;
+  height: 70px;
+  border-radius: 30px 30px 0 0;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .insta_txt .insta_id {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+  color: #fff;
+  position: absolute;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.contents05 .instar .swiper-wrapper .swiper-slide .insta_txt .insta_text {
+  position: absolute;
+  margin-top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 12px;
+  width: 200px;
+  overflow: hidden;
+  font-family: "KOTRA_GOTHIC";
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contents05 .instar .next_button .next_back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 80px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+.contents05 .instar .next_button .swiper-button-next {
+  margin-right: 10px;
+  color: #222;
+}
+.contents05 .instar .prev_button .prev_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 80px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+.contents05 .instar .prev_button .swiper-button-prev {
+  margin-left: 10px;
+  color: #222;
+}
+
+/***** insta_pop *******/
+.insta_ex {
+  /* display: none; */
+  /*  width: 100vw; height: 100vh;
+  background-color: #fff; */
+}
+.insta_ex .insta_page {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 830px;
+  height: 700px;
+  background-color: #fff;
+  z-index: 10;
+  overflow: hidden;
+}
+.insta_ex .insta_page .insta_pop_left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 550px;
+  border-right: 1px solid #eee;
+}
+.insta_ex .insta_page .insta_pop_left > div {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 550px;
+  height: 500px;
+  overflow: hidden;
+}
+.insta_ex .insta_page .insta_pop_left > div img {
+  width: 100%;
+}
+.insta_ex .insta_page .insta_pop_left > ul {
+  height: 180px;
+  margin-top: 20px;
+  background-color: #eee;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.insta_ex .insta_page .insta_pop_left > ul > li {
+  margin-left: 10px;
+  font-family: "KOTRA_GOTHIC";
+  font-size: 14px;
+}
+.insta_ex .insta_page .insta_pop_left > ul > li:nth-child(2) {
+  margin: 10px 0 10px 10px;
+}
+.insta_ex .insta_page .insta_pop_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 700px;
+  text-align: center;
+}
+.insta_ex .insta_page .insta_pop_right .insta_right_product {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: #eee;
+}
+.insta_ex .insta_page .insta_pop_right .insta_right_product > img {
+  width: 100%;
+  transform: translateY(-5px);
+}
+.insta_ex .insta_page .insta_pop_right > button {
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+}
+.insta_ex .insta_page .insta_pop_right .cart {
+  background-color: #fff;
+  border: 1px solid #222;
+}
+.insta_ex .insta_page .insta_pop_right .buy {
+  margin-top: 10px;
+  color: #fff;
+  border: 0;
+  background-color: transparent;
+  background-color: #222;
+}
+.insta_ex .insta_page .insta_pop_right .insta_pop_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: "KOTRA_GOTHIC";
+  font-size: 20px;
+  cursor: pointer;
+}
+.insta_ex .insta_page .insta_pop_right .insta_pop_close:hover {
+  color: #ccc;
+}
+.insta_ex .insta_pop_01 {
+  display: none;
+}
+.insta_ex .insta_pop_02 {
+  display: none;
+}
+.insta_ex .insta_pop_03 {
+  display: none;
+}
+.insta_ex .insta_pop_04 {
+  display: none;
+}
+.insta_ex .insta_pop_05 {
+  display: none;
+}
+.insta_ex .insta_pop_06 {
+  display: none;
+}
+
+/**************** footer ******************/
+.footer {
+  width: 1300px;
+  height: 350px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: #444;
+}
+.footer .footer_inner {
+  position: relative;
+  height: 300px;
+  border: 2px solid #ddd;
+}
+.footer .footer_inner ul {
+  margin: 35px 0 0 115px;
+}
+.footer .footer_inner ul a {
+  border-bottom: 1px solid #fff;
+}
+.footer .footer_inner .footer_menu {
+  display: flex;
+}
+.footer .footer_inner .footer_menu li {
+  margin-right: 30px;
+}
+.footer .footer_inner .footer_menu li:hover > a {
+  color: #999;
+}
+.footer .footer_inner .footer_menu li:nth-child(1) a, .footer .footer_inner .footer_menu li:nth-child(2) a, .footer .footer_inner .footer_menu li:nth-child(3) a {
+  border: none;
+}
+.footer .footer_inner .footer_menu li a {
+  font-size: 14px;
+  font-family: "KOTRA_GOTHIC";
+  color: #fff;
+}
+.footer .footer_inner .footer_menu li > div {
+  position: absolute;
+  z-index: 2;
+  top: -190px;
+  left: 85px;
+  width: 120px;
+  background-color: #444;
+  text-align: center;
+  /*  border-radius: 5px; */
+}
+.footer .footer_inner .footer_menu li > div > p {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #666;
+  font-size: 14px;
+  font-family: "KOTRA_GOTHIC";
+  color: #ddd;
+  cursor: pointer;
+}
+.footer .footer_inner .footer_menu li > div > p:last-child {
+  /*  border: none; */
+}
+.footer .footer_inner .footer_menu li > div > p:hover {
+  background-color: #999;
+}
+.footer .footer_inner .footer_menu li .service {
+  display: none;
+}
+.footer .footer_inner .footer_menu li .company {
+  display: none;
+  top: -32px;
+  left: 180px;
+}
+.footer .footer_inner .footer_menu li .sns {
+  display: none;
+  top: -64px;
+  left: 270px;
+}
+.footer .footer_inner .footer_txt > p,
+.footer .footer_inner .footer_txt a {
+  font-size: 14px;
+  font-family: "KOTRA_GOTHIC";
+  color: #fff;
+  line-height: 25px;
+}
+.footer .footer_inner .footer_txt > p:nth-child(5),
+.footer .footer_inner .footer_txt a:nth-child(5) {
+  margin-top: 40px;
+}
+.footer .footer_inner .footer_txt > p span,
+.footer .footer_inner .footer_txt a span {
+  margin-left: 30px;
+  font-family: "KOTRA_GOTHIC";
+}
+.footer .footer_inner .footer_logo {
+  position: absolute;
+  top: 40px;
+  right: 150px;
+  width: 125px;
+  text-align: center;
+}
+.footer .footer_inner .footer_logo > div {
+  width: 125px;
+  height: 60px;
+  border: 1px solid #fff;
+}
+.footer .footer_inner .footer_logo > div > h5 {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #fff;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #fff;
+  letter-spacing: 1px;
+}
+.footer .footer_inner .footer_logo > div > h5 > p {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+.footer .footer_inner .footer_logo > div > p {
+  font-family: "KOTRA_GOTHIC";
+  color: #fff;
+  letter-spacing: 0px;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.footer .footer_inner .footer_logo > p {
+  font-family: "KOTRA_GOTHIC";
+  color: #fff;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.footer .footer_inner .footer_sns {
+  position: absolute;
+  bottom: 100px;
+  right: 140px;
+}
+.footer .footer_inner .footer_sns > div {
+  float: left;
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #777;
+  cursor: pointer;
+}
+.footer .footer_inner .footer_sns > div:hover {
+  filter: invert(100%);
+}
+.footer .footer_inner .footer_sns > div > a > img {
+  width: 100%;
+}
+
+.popup_back {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 192, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: 998;
+}
+
+.btn_top {
+  display: none;
+  width: 50px;
+  height: 49px;
+  background-color: #222;
+  color: #fcf9ee;
+  font-weight: bold;
+  text-align: center;
+  line-height: 52px;
+  text-decoration: none;
+  font-family: "KOTRA_GOTHIC";
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  border-radius: 50%;
+  z-index: 9999;
+}
+.btn_top:hover {
+  color: #222;
+  border: 1px solid #222;
+  background-color: #fcf9ee;
+}
+
+/*# sourceMappingURL=/detail.7cfd9264.css.map */

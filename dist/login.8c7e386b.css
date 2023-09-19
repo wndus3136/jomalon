@@ -1,0 +1,347 @@
+*{margin: 0; padding: 0;} 
+li{list-style: none;}
+a{text-decoration: none; color: black;}
+
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+/* @font-face {
+    font-family: 'KOTRA_GOTHIC';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+ */
+
+/* div{color: #FCF9EE;} */
+h1{
+    font-family: 'BookkMyungjo-Bd';
+    color: #222;
+}
+h5{
+    font-size: 14px;
+    color: #222;
+
+}
+body{
+    background-color: #FCF9EE;
+}
+
+#message{
+    color: red;
+    font-size: 12px;
+}
+#message.success {color: blue;}
+
+
+
+/*************** header ***************/
+.rolling {overflow: hidden;
+    display: flex; 
+    /* width: 1300px; */
+    width: 100wh;
+    margin: 0 auto;
+    background: #222;
+    height: 40px;
+    line-height: 40px;
+}
+.rolling .list {display: flex;}
+.rolling .list > li {
+    font-size: 14px;
+    color:#FCF9EE;
+    width: 1800px;
+}
+.rolling .list > li a{
+    color: #FCF9EE;
+}
+@keyframes flowRolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 1280px) {
+    .flow_banner .list > li {font-size: 16px;padding: 10px;}
+}
+
+@media (max-width: 767px) {
+    .flow_banner .list > li {font-size: 14px;padding: 5px;}
+}
+
+/*************** wrap ***************/
+.wrap{
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 160px;
+    overflow: hidden;
+    padding: 0 240px;
+    box-sizing: border-box;
+}
+.wrap .log{
+    width: 420px;
+    height: 600px;
+    margin-right: 50px;
+    float: left;
+}
+
+.wrap .log h1{
+    text-align: center;
+}
+/* 로그인 */
+.log_id{
+    position: relative;
+    width: 410px;
+    margin-top: 60px;
+} 
+.log_pw {
+    position: relative;
+    width: 410px;
+    margin-top: 50px;
+  }
+  .log_id>div{
+    position: absolute;
+    top: 0; right: 0;
+    scale: 1.2;
+    color: #222;
+
+  }
+  
+  .log_pw>div{
+    position: absolute;
+    top: 0; right: 0;
+    color: #222;
+  }
+  
+  .log_id input , .log_pw input{
+    font-size: 15px;
+    color: #222222;
+    width: 410px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+    background: none;
+    z-index: 5;
+  }
+  
+  .log_id input::placeholder,
+  .log_pw input::placeholder
+   { color: #aaaaaa; }
+
+  .log_id input:focus,
+  .log_pw input:focus { outline: none; }
+  
+  .log_id .id_in,
+  .log_pw .pw_in
+   {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0%;  /* right로만 바꿔주면 오 - 왼 */
+    background-color: #666;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    transition: 0.5s;
+  }
+  
+  .log_id label,
+  .log_pw label
+   {
+    position: absolute;
+    color: #aaa;
+    left: 10px;
+    font-size: 16px;
+    bottom: 8px;
+    transition: all .2s;
+  }
+  
+  .log_id input:focus ~ label, input:valid ~ label,
+  .log_pw input:focus ~ label, input:valid ~ label
+   {
+    font-size: 14px;
+    bottom: 40px;
+    color: #666;
+    font-weight: bold;
+  }
+  
+  .log_id input:focus ~ .id_in, input:valid ~ .id_in,
+  .log_pw input:focus ~ .pw_in, input:valid ~ .pw_in {
+    width: 100%;
+  }
+
+  /*  */
+.wrap .log .find_pw{
+    height: 20px;
+    margin: 30px 0 10px 0;
+    width: 147px;
+    cursor: pointer;
+}
+.wrap .log .find_pw:hover{
+    border-bottom: 1px solid #222;
+    box-sizing: border-box;
+}
+.wrap .log .log_btn{
+    border: none;
+    float: left;
+    width: 280px;
+    height: 60px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    background-color: #222;
+    border-radius: 3px;
+    cursor: pointer;
+}    
+.wrap .log .log_btn h5{
+    color: #FCF9EE;
+}
+.wrap .log .log_btn:hover{
+    background-color: #555;
+}
+
+.wrap .log .non_btn{
+    float: left;
+    margin-left: -3px;
+    border: none;
+    height: 60px;
+    width: 120px;
+    background-color:transparent;
+    border: 1px solid #222;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.wrap .log .non_btn:hover{
+    border: none;
+    background-color: #ddd;
+}
+/* chk */
+.chk_box { 
+    display: block; 
+    position: relative; 
+    padding-left: 25px; 
+    margin-top: 25px;
+    margin-bottom: 10px; 
+    cursor: pointer; 
+    font-size: 14px; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+/* 기본 체크박스 숨기기 */
+.chk_box input[type="checkbox"] { display: none; }
+
+/* 선택되지 않은 체크박스 스타일 꾸미기 */
+.on { width: 20px; height: 20px; background: #ddd; position: absolute; top: 0; left: 0; }
+
+/* 선택된 체크박스 스타일 꾸미기 */
+.chk_box input[type="checkbox"]:checked + .on { background: #222; }
+.on:after { content: ""; position: absolute; display: none; }
+.chk_box input[type="checkbox"]:checked + .on:after { display: block; }
+.on:after { 
+    width: 7px; height: 10px;
+    border: solid #FCF9EE;
+    border-width: 0 2px 2px 0; 
+    -webkit-transform: rotate(45deg); 
+    -ms-transform: rotate(45deg); 
+    transform: rotate(45deg); 
+    position: absolute; 
+    left: 6px; top: 2px; 
+}
+
+/* singup */
+.wrap .signup{
+    width: 350px;
+    float: left;
+}
+.wrap .signup .signup_bg{
+    position: relative;
+    background-color: #ccc;
+    height: 390px;
+}
+
+.wrap .signup .signup_bg img{
+    width: 100%;
+}
+.wrap .signup .signup_bg .signup_txt{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+
+}
+.wrap .signup .signup_bg .signup_txt .line{
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    width: 330px;
+    height: 370px;
+    border: 1px solid #FCF9EE;
+}
+.wrap .signup .signup_bg .signup_txt .line h1{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 25px;
+    color: #FCF9EE;
+}
+.wrap .signup .signup_bg .signup_txt .line>h5{
+    margin-top: 15px;
+    margin-left: 30px;
+    color: #FCF9EE;
+}
+.wrap .signup .signup_bg .signup_txt .line>p{
+    margin: 10px 0 0 30px;
+    font-size: 12px;
+    color: #ccc;
+}
+.wrap .signup .signup_bg .signup_txt .line .join_up{
+    position: relative;
+    background-color:transparent;
+    border: none;
+    height: 60px;
+    border: 1px solid #FCF9EE;
+    width: 280px;
+    margin-left: 25px;
+    margin-top: 90px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.wrap .signup .signup_bg .signup_txt .line .join_up p{
+    width: 100%; height: 100%;
+    background-color: #222;
+    opacity: 0.7;
+}
+.wrap .signup .signup_bg .signup_txt .line .join_up p:hover{
+    background-color: #FCF9EE;
+    color: #222;
+    opacity: 0.7;
+}
+.wrap .signup .signup_bg .signup_txt .line .join_up h5{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    color: #FCF9EE;
+
+}
+
+
+.wrap .log .log_btn{
+    border: none;
+    float: left;
+    width: 280px;
+    height: 60px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    background-color: #222;
+    border-radius: 3px;
+    cursor: pointer;
+}    
+
+/*# sourceMappingURL=/login.8c7e386b.css.map */
