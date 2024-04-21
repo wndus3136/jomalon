@@ -66,22 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
         optionList.style.display = optionList.style.display === 'block' ? 'none' : 'block';
     });
 
-    // 클릭한 옵션의 텍스트를 라벨 안에 넣음
+
     const handleSelect = (item) => {
         label.parentNode.classList.remove('active');
         label.innerHTML = item.textContent;
 
-        // 옵션 선택 후에 optionList를 닫음
         const optionList = label.parentNode.querySelector('.optionList');
         optionList.style.display = 'none';
     }
 
-    // 옵션 클릭시 클릭한 옵션을 넘김
     options.forEach(option => {
         option.addEventListener('click', () => handleSelect(option))
     })
 
-    // 라벨을 클릭시 옵션 목록이 열림/닫힘
+
     label.addEventListener('click', () => {
         if (label.parentNode.classList.contains('active')) {
             label.parentNode.classList.remove('active');
@@ -99,13 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const popBack = document.querySelector('.popup_back');
 
     addCart.addEventListener('click', () => {
-        cartPop.style.right = '300px'; // 팝업 표시
+        cartPop.style.right = '300px';
         cartPop.style.transition = '0.4s';
         popBack.style.display = 'block';
     });
 
     cartClose.addEventListener('click', () => {
-        cartPop.style.right = '-700px'; // 팝업 숨김
+        cartPop.style.right = '-700px'; 
         popBack.style.display = 'none';
     });
     //cart_pop
@@ -134,12 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatePrice() {
         let currentQuantity = parseInt(quantityInput.value);
-        const unitPrice = 218000; // 단위 가격 설정
+        const unitPrice = 218000; 
         let totalPrice = unitPrice * currentQuantity;
         priceElement.textContent = `￦ ${totalPrice}`;
     }
 
-    // 초기 가격 표시
+
     updatePrice();
 
 
@@ -150,8 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const ingredientBox = document.querySelector('.ingredient')
     const reviewBox = document.querySelector('.review_ex')
 
-    /*   'is'라고 들어가면 isOpen 은 true 또는 flase값을 가지는 변수이다. */
-    let isOpen = false /* 상태변수 */
+
+    let isOpen = false
 
     noteBtn.addEventListener('click', function () {
 
@@ -377,10 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
     $(window).scroll(function () {
         if ($(this).scrollTop() >= 300) {
             $('.btn_top').fadeIn();
@@ -416,19 +410,40 @@ document.addEventListener('DOMContentLoaded', () => {
         /*  autoplay: true */
     }); //swiper1
 
-    /* contents05_swiper */
-    const instarSwiper = new Swiper(".instar", {
-        loop: true,
-        centeredSlides: true,
-        loopedSlides: 2,
-        slidesPerView: 5,
-        spaceBetween: 15,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        autoplay: true
-    }); //swiper2
+/* ********************************************************* */
+/* contents05_swiper */
+new Swiper(".instar", {
+    loop: true,
+    centeredSlides: true,
+    loopedSlides: 2,
+    slidesPerView: 5,
+    spaceBetween: 15,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: true
+}); //swiper2
+
+function togglePop(snsPop) {
+  $(snsPop).toggle();
+}     
+
+const instarSlides = document.querySelectorAll('.instar_slide');
+for (let i = 1; i <= instarSlides.length; i++) {
+  const slideSelector = $("#insta_slide_0"+i);
+  const snsPop = `.insta_pop_0${i}`;
+
+  $(slideSelector).on("click", function () {
+    togglePop(snsPop);
+  });
+
+  $(snsPop).find('.close').on("click", function () {
+    togglePop(snsPop);
+  });
+} //insta_pop
+/************************************************** */
+
 
     const menuBtns = document.querySelectorAll(".footer_menu_btn");
 

@@ -294,7 +294,7 @@ body {
 .wrap {
   position: relative;
   width: 1300px;
-  height: 2000px;
+  height: 1925px;
   margin: 0 auto;
   margin-top: 200px;
   overflow: hidden;
@@ -307,7 +307,7 @@ body {
 }
 .wrap .best_product {
   width: 100%;
-  height: 1880px;
+  /* height: 1880px; */
   padding: 0 88px;
   display: flex;
   flex-wrap: wrap;
@@ -367,9 +367,49 @@ body {
 .wrap .sort_select:hover {
   background-color: #fff;
 }
-.wrap .pagination-container {
+
+.pagination-container {
+  width: 1050px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.pagination-container .pagination {
+  width: 300px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  line-height: 30px;
+}
+.pagination-container .pagination > div {
+  height: 30px;
+  text-align: center;
+}
+.pagination-container .pagination .prev-button {
+  width: 50px;
+  cursor: pointer;
+}
+.pagination-container .pagination .prev-button:hover {
+  font-weight: bold;
+}
+.pagination-container .pagination .bold {
+  font-weight: bold;
+}
+.pagination-container .pagination .number-button-wrapper > span {
+  display: inline-block;
+  width: 40px;
+  margin: 0 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.pagination-container .pagination .number-button-wrapper > span:hover {
+  scale: 1.2;
+}
+.pagination-container .pagination .next-button {
+  width: 50px;
+  cursor: pointer;
+}
+.pagination-container .pagination .next-button:hover {
+  font-weight: bold;
 }
 
 /**************** footer ******************/

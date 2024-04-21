@@ -1,0 +1,20 @@
+{
+  "name": "jomalon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wndus3136/jomalon_london.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wndus3136/jomalon_london/issues"
+  },
+  "homepage": "https://github.com/wndus3136/jomalon_london#readme"
+}

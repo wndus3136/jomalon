@@ -125,34 +125,118 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  /* ********************************************************* */
+  /* contetns03 issu/result */
+  /* 결과값 받아서 result 경우의 수 값으로 넣기 */
+ function addTestClickListener(testClass, currentClass, nextClass) {
+  const testElements = document.querySelectorAll(testClass);
 
-  /* contents05_swiper */
-  const instarSwiper = new Swiper(".instar", {
-    /* centeredSlides: true, */
-    loop: true,
-    loopedSlides: 5,
-    slidesPerView: 5,
-    spaceBetween: 15,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+  testElements.forEach((element) => {
+    element.addEventListener('click', function () {
+      // 현재 클래스(currentClass) 요소를 숨김
+      const currentElement = document.querySelector(currentClass);
+      if (currentElement) {
+        currentElement.style.display = 'none';
+      }
+      
+      // 다음 클래스(nextClass) 요소를 보이게 함
+      const nextElement = document.querySelector(nextClass);
+      if (nextElement) {
+        nextElement.style.display = 'block';
+      }
+    });
   });
-  //swiper2
+}
 
-  /************************************************** */
+document.querySelector('.contents03_btn').addEventListener('click', function () {
+  document.querySelector('.issu_page').style.display = 'none';
+  document.querySelector('.issu_contents>ul').style.display = 'block';
+  document.querySelector('.issu').style.display = 'block';
+});
+
+addTestClickListener('.test01_1, .test01_2', '.issu01', '.issu02');
+addTestClickListener('.test02_1, .test02_2', '.issu02', '.issu03');
+addTestClickListener('.test03_1, .test03_2', '.issu03', '.issu_result');
+
+const resultCloseButtons = document.querySelectorAll('.result_close');
+resultCloseButtons.forEach((button) => {
+  button.addEventListener('click', function () {
+    document.querySelector('.issu_result').style.display = 'none';
+    document.querySelector('.issu_page').style.display = 'block';
+    addTestClickListener('.test01_1, .test01_2', '.issu01', '.issu02');
+  });
+});
+
+
+
+
+var result1;
+var result2;
+var result3;
+
+$(document).ready(function() {
+  
+  
+  $('.choice_img1').click(function(){
+    result1 = $(this).attr("value");
+  
+  })
+  $('.choice_img2').click(function(){
+    result2 = $(this).attr("value");
+  })
+  $('.choice_img3').click(function(){
+    result3 = $(this).attr("value");
+    showResult();
+  })
+
+});
+
+  
+
+function showResult(){
+  if(result1 == 1 && result2 == 2 ){
+  
+   document.querySelector('.result_01').style.display = 'block';
+   document.querySelector('.result_02').style.display = 'none';
+   document.querySelector('.result_03').style.display = 'none';
+  
+  }else if(result1 == 2 && result2 == 1 ){
+   
+    document.querySelector('.result_02').style.display = 'block';
+    document.querySelector('.result_01').style.display = 'none';
+    document.querySelector('.result_03').style.display = 'none';
+  
+  }else{
+     document.querySelector('.result_03').style.display = 'block';
+    document.querySelector('.result_01').style.display = 'none';
+    document.querySelector('.result_02').style.display = 'none';
+  
+  }
+}
+
+/* ********************************************************* */
+    /* contents05_swiper */
+    new Swiper(".instar", {
+      loop: true,
+      centeredSlides: true,
+      loopedSlides: 2,
+      slidesPerView: 5,
+      spaceBetween: 15,
+      navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+      },
+      autoplay: true
+  }); //swiper2
+
   function togglePop(snsPop) {
     $(snsPop).toggle();
-  }
+  }     
 
   const instarSlides = document.querySelectorAll('.instar_slide');
-  for (let i = 0; i <= instarSlides.length; i++) {
-    const slideSelector = `.instar_slide:nth-child(${i + 1})`;
-    const snsPop = `.insta_pop_0${i + 1}`;
+  for (let i = 1; i <= instarSlides.length; i++) {
+    const slideSelector = $("#insta_slide_0"+i);
+    const snsPop = `.insta_pop_0${i}`;
 
     $(slideSelector).on("click", function () {
       togglePop(snsPop);
@@ -162,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
       togglePop(snsPop);
     });
   } //insta_pop
+  /************************************************** */
 
 
   const previewPop = document.querySelector('.preview_popup');
